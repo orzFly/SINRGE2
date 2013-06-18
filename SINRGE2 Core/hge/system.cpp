@@ -585,6 +585,7 @@ bool CALL HGE_Impl::System_Update()
 		if(procRenderFunc)
 			procRenderFunc();
 
+		GetAppPtr()->UpdateFps();
 		if (bShowFps)
 		{
 			wsprintfW(szTitleFps, L"%s - %d FPS", szWinTitle, GetAppPtr()->GetRealFps());
@@ -865,7 +866,7 @@ void MRbSinCore::Transition(int duration, const wchar_t * filename, float vague)
 					pHGE->Gfx_RenderQuad(&frzQuad);
 					pHGE->Gfx_RenderQuad(&newQuad);
 					pHGE->Gfx_EndScene();
-
+					GetAppPtr()->UpdateFps();
 					if (pHGE->bShowFps)
 					{
 						wsprintfW(pHGE->szTitleFps, L"%s - %d FPS", pHGE->szWinTitle, GetAppPtr()->GetRealFps());
@@ -919,7 +920,7 @@ void MRbSinCore::Transition(int duration, const wchar_t * filename, float vague)
 					pHGE->Gfx_RenderQuad(&newQuad);
 					pHGE->Gfx_RenderQuad(&frzQuad);
 					pHGE->Gfx_EndScene();
-
+					GetAppPtr()->UpdateFps();
 					if (pHGE->bShowFps)
 					{
 						wsprintfW(pHGE->szTitleFps, L"%s - %d FPS", pHGE->szWinTitle, GetAppPtr()->GetRealFps());
@@ -953,7 +954,7 @@ void MRbSinCore::Transition(int duration, const wchar_t * filename, float vague)
 				pHGE->Gfx_RenderQuad(&frzQuad);
 				pHGE->Gfx_RenderQuad(&newQuad);
 				pHGE->Gfx_EndScene();
-
+				GetAppPtr()->UpdateFps();
 				if (pHGE->bShowFps)
 				{
 					wsprintfW(pHGE->szTitleFps, L"%s - %d FPS", pHGE->szWinTitle, GetAppPtr()->GetRealFps());

@@ -58,6 +58,7 @@ public:
 
 	void						LimitFps(int limit);
 	int							GetRealFps();
+	void						UpdateFps();
 	
 	IC7pkgWriter *				Open7pkgWriter(const wchar_t * filename, const wchar_t * password);
 	void						Close7pkgWriter(IC7pkgWriter * pw);
@@ -104,6 +105,7 @@ private:
 	u32							m_frame_count;
 	//fps
 	CTimer *					m_fps_timer;
+	
 	unsigned int				m_frame, m_t0, m_t1, m_last_fps, m_real_fps;
 	float						m_seconds;
 	int							m_last_limit;

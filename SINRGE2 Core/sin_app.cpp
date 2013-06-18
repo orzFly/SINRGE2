@@ -699,7 +699,7 @@ void CApplication::LimitFps(int limit)
 	}
 }
 
-int CApplication::GetRealFps()
+void CApplication::UpdateFps()
 {
 	m_frame++;
 	m_t0 = m_fps_timer->GetTicks();
@@ -709,8 +709,12 @@ int CApplication::GetRealFps()
 		m_last_fps = m_real_fps = m_frame / m_seconds;
 		m_t1 = m_t0;
 		m_frame = 0;
-		return m_real_fps;
 	}
+}
+
+int CApplication::GetRealFps()
+{
+	
 	return m_last_fps;
 }
 
