@@ -30,8 +30,8 @@ Global
 		{535383FC-CD0C-4134-81FA-9CE22E8E0A66}.Release_editor|Win32.Build.0 = Release|Win32
 		{535383FC-CD0C-4134-81FA-9CE22E8E0A66}.Release|Win32.ActiveCfg = Release|Win32
 		{535383FC-CD0C-4134-81FA-9CE22E8E0A66}.Release|Win32.Build.0 = Release|Win32
-		{535383FC-CD0C-4134-81FA-9CE22E8E0A66}.TRUEDebug|Win32.ActiveCfg = Debug|Win32
-		{535383FC-CD0C-4134-81FA-9CE22E8E0A66}.TRUEDebug|Win32.Build.0 = Debug|Win32
+		{535383FC-CD0C-4134-81FA-9CE22E8E0A66}.TRUEDebug|Win32.ActiveCfg = TRUEDebug|Win32
+		{535383FC-CD0C-4134-81FA-9CE22E8E0A66}.TRUEDebug|Win32.Build.0 = TRUEDebug|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
