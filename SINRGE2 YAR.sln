@@ -4,12 +4,16 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SINRGE2 Core", "SINRGE2 Core\SINRGE2 Core.vcxproj", "{6CF7C524-819C-4389-A524-2D2513708EA2}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SINRGE2 Player", "SINRGE2 Player\SINRGE2 Player.vcxproj", "{535383FC-CD0C-4134-81FA-9CE22E8E0A66}"
+	ProjectSection(ProjectDependencies) = postProject
+		{6CF7C524-819C-4389-A524-2D2513708EA2} = {6CF7C524-819C-4389-A524-2D2513708EA2}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
 		Release_editor|Win32 = Release_editor|Win32
 		Release|Win32 = Release|Win32
+		TRUEDebug|Win32 = TRUEDebug|Win32
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{6CF7C524-819C-4389-A524-2D2513708EA2}.Debug|Win32.ActiveCfg = Debug|Win32
@@ -18,12 +22,16 @@ Global
 		{6CF7C524-819C-4389-A524-2D2513708EA2}.Release_editor|Win32.Build.0 = Release|Win32
 		{6CF7C524-819C-4389-A524-2D2513708EA2}.Release|Win32.ActiveCfg = Release|Win32
 		{6CF7C524-819C-4389-A524-2D2513708EA2}.Release|Win32.Build.0 = Release|Win32
+		{6CF7C524-819C-4389-A524-2D2513708EA2}.TRUEDebug|Win32.ActiveCfg = TRUEDebug|Win32
+		{6CF7C524-819C-4389-A524-2D2513708EA2}.TRUEDebug|Win32.Build.0 = TRUEDebug|Win32
 		{535383FC-CD0C-4134-81FA-9CE22E8E0A66}.Debug|Win32.ActiveCfg = Debug|Win32
 		{535383FC-CD0C-4134-81FA-9CE22E8E0A66}.Debug|Win32.Build.0 = Debug|Win32
 		{535383FC-CD0C-4134-81FA-9CE22E8E0A66}.Release_editor|Win32.ActiveCfg = Release|Win32
 		{535383FC-CD0C-4134-81FA-9CE22E8E0A66}.Release_editor|Win32.Build.0 = Release|Win32
 		{535383FC-CD0C-4134-81FA-9CE22E8E0A66}.Release|Win32.ActiveCfg = Release|Win32
 		{535383FC-CD0C-4134-81FA-9CE22E8E0A66}.Release|Win32.Build.0 = Release|Win32
+		{535383FC-CD0C-4134-81FA-9CE22E8E0A66}.TRUEDebug|Win32.ActiveCfg = Debug|Win32
+		{535383FC-CD0C-4134-81FA-9CE22E8E0A66}.TRUEDebug|Win32.Build.0 = Debug|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

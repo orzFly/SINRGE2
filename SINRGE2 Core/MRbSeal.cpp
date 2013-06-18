@@ -2107,7 +2107,7 @@ void SealCleanup()
 	if (seal_running)
 		seal_cleanup();
 }
-
+/*
 #define GET_CHECK_SEAL_FUNC(func)													\
 	do																				\
 	{																				\
@@ -2115,9 +2115,15 @@ void SealCleanup()
 		if (##func == 0)															\
 			return false;															\
 	} while (0)
-
+*/
+/*#define GET_CHECK_SEAL_FUNC(func)													\
+	do																				\
+	{																				\
+		*((unsigned long*)&##func) = (unsigned long)::##func;						\
+	} while (0)
+*/
 bool MRbSeal::InitLibrary()
-{
+{/*
 	HMODULE hSeal = GetAppPtr()->GetSealHmodule();
 
 	GET_CHECK_SEAL_FUNC(seal_startup);
@@ -2224,7 +2230,7 @@ bool MRbSeal::InitLibrary()
 
 	GET_CHECK_SEAL_FUNC(seal_move_listener);
 	GET_CHECK_SEAL_FUNC(seal_move_src);
-	
+	*/
 	Init_seal();
 	return true;
 }

@@ -526,21 +526,13 @@ int CApplication::Eval(const char * script)
 
 void CApplication::InitRubyInnerClassExt()
 {
-	if (m_with_console)
-	{
-		rb_define_global_function("print",		(RbFunc)rdf_print,			-1);
-		rb_define_global_function("puts",		(RbFunc)rdf_puts,			-1);
-	}
-	else
-	{
-		rb_define_global_function("p",			(RbFunc)rdf_msgboxp,		-1);
-		rb_define_global_function("print",		(RbFunc)rdf_msgbox,			-1);
-		rb_define_global_function("puts",		(RbFunc)rdf_msgbox,			-1);
-	}
+	rb_define_global_function("msgbox_p",	(RbFunc)rdf_msgboxp,		-1);
+	rb_define_global_function("msgbox",		(RbFunc)rdf_msgbox,			-1);
 	ruby_Init_Fiber_as_Coroutine();
 	Init_zlib();
 	Init_nonblock();
 	Init_wait();
+	Init_fiddle();
 }
 
 void CApplication::InitExportSinInterface()
@@ -591,14 +583,16 @@ void CApplication::OnFailed(VALUE err)
 
 	const VALUE message			= rb_funcall(err, rb_intern("message"), 0);
 	const VALUE message_str		= rb_funcall(message, rb_intern("gsub"), 2, rb_str_new2("\n"), rb_str_new2("\r\n"));
+	const VALUE backtrace		= rb_funcall(rb_funcall(err, rb_intern("backtrace"), 0), rb_intern("join"), 1, rb_str_new2("\r\n"));
 
 	const char * clsname		= rb_obj_classname(err);
 	const char * msg			= RSTRING_PTR(message_str);
+	const char * bt             = RSTRING_PTR(backtrace);
 
 	if (rb_obj_is_kind_of(err, rb_eSyntaxError))
 		errmsg = rb_sprintf("Script '%s' line %d: %s occurred.", RSTRING_PTR(sourcefile), NUM2INT(sourceline), clsname);
 	else
-		errmsg = rb_sprintf("Script '%s' line %d: %s occurred.\n\n%s", RSTRING_PTR(sourcefile), NUM2INT(sourceline), clsname, msg);
+		errmsg = rb_sprintf("Script '%s' line %d: %s occurred.\n\n%s\n\n%s", RSTRING_PTR(sourcefile), NUM2INT(sourceline), clsname, msg, bt);
 
 	MessageBoxW(GetAppPtr()->GetMainHwnd(), Kconv::AnsiToUnicode(RSTRING_PTR(errmsg)), GetAppPtr()->GetTitle(), MB_ICONWARNING);
 }
@@ -685,9 +679,11 @@ failed_return:
 bool CApplication::InitAudio()
 {
 #if SIN_USE_SEAL
-	if (!m_hSeal) return false;
-	CRb7pkgWriter::InitLibrary();
-	return MRbSeal::InitLibrary();
+	MRbSeal::InitLibrary();
+	if (m_hSeal) CRb7pkgWriter::InitLibrary();
+	return true;
+	//if (!m_hSeal) return false;
+	//return CRb7pkgWriter::InitLibrary();
 #else
 	MRbAudio::InitLibrary();
 	return true;

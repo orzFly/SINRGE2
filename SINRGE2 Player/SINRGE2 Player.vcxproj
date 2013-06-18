@@ -82,8 +82,8 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <StackReserveSize>10000000</StackReserveSize>
-      <IgnoreSpecificDefaultLibraries>
-      </IgnoreSpecificDefaultLibraries>
+      <IgnoreSpecificDefaultLibraries>msvcrt;libci</IgnoreSpecificDefaultLibraries>
+      <AdditionalDependencies>advapi32.lib;shell32.lib;ws2_32.lib;imagehlp.lib;shlwapi.lib;winmm.lib;$(SolutionDir)Release/SINRGE2.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>

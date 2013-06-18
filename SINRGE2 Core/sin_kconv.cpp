@@ -84,7 +84,7 @@ char * Kconv::UnicodeToAnsi(const wchar_t * str, CAutoBuffer * pAutoBuffer)
  */
 char* Kconv::UnicodeToUTF8(const wchar_t * str, CAutoBuffer * pAutoBuffer)
 {
-	if (!str) 
+	if (!str)
 		return 0;
 
 	if (!pAutoBuffer) pAutoBuffer = &s_cAutoBuffer01;
@@ -96,7 +96,7 @@ char* Kconv::UnicodeToUTF8(const wchar_t * str, CAutoBuffer * pAutoBuffer)
 
 	char * mb_utf8_string = (char *)pAutoBuffer->get_buffer_ptr();
 	//assert(mb_utf8_string);
-
+	
 	WideCharToMultiByte(CP_UTF8, 0, str, -1, (LPSTR)mb_utf8_string, utf8_len, NULL, NULL);
 
 	return mb_utf8_string;

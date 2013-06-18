@@ -9,6 +9,10 @@
       <Configuration>Release</Configuration>
       <Platform>Win32</Platform>
     </ProjectConfiguration>
+    <ProjectConfiguration Include="TRUEDebug|Win32">
+      <Configuration>TRUEDebug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{6CF7C524-819C-4389-A524-2D2513708EA2}</ProjectGuid>
@@ -17,12 +21,19 @@
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='TRUEDebug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
     <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -37,6 +48,9 @@
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='TRUEDebug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
@@ -46,6 +60,13 @@
     <LinkIncremental>false</LinkIncremental>
     <GenerateManifest>false</GenerateManifest>
     <TargetName>SINRGE2</TargetName>
+    <TargetExt>.lib</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='TRUEDebug|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <GenerateManifest>false</GenerateManifest>
+    <TargetName>SINRGE2</TargetName>
+    <TargetExt>.lib</TargetExt>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -80,6 +101,7 @@
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
       <DisableSpecificWarnings>
       </DisableSpecificWarnings>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -97,6 +119,52 @@
     <PreBuildEvent>
       <Command>ruby version_generator.rb</Command>
     </PreBuildEvent>
+    <Lib>
+      <AdditionalDependencies>$(SolutionDir)Contrib/lib/zlib.lib;$(SolutionDir)Contrib/lib/libffi.lib;$(SolutionDir)Contrib/lib/seal/seal.lib;$(SolutionDir)Contrib/lib/msvcr100-ruby200-static_MT.lib;$(SolutionDir)Contrib/DXSDK81/lib/d3d8.lib;$(SolutionDir)Contrib/DXSDK81/lib/d3dx8.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Lib>
+    <Lib>
+      <IgnoreSpecificDefaultLibraries>msvcrt.lib;libci.lib</IgnoreSpecificDefaultLibraries>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='TRUEDebug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>Disabled</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;SINRGE2CORE_EXPORTS;HGE_DIRECTX_VER=9;HAVE_STRUCT_TIMEVAL;SIN_USE_SEAL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)Contrib\DirectShow\include;$(SolutionDir)Contrib\DXSDK81\include;$(SolutionDir)Contrib\include;$(ProjectDir);$(ProjectDir)hge;$(ProjectDir)hge\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <FavorSizeOrSpeed>Neither</FavorSizeOrSpeed>
+      <DisableSpecificWarnings>
+      </DisableSpecificWarnings>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>advapi32.lib;shell32.lib;ws2_32.lib;imagehlp.lib;shlwapi.lib;winmm.lib;$(SolutionDir)Contrib/lib/msvcr100-ruby200-static_MT.lib;$(SolutionDir)Contrib/lib/zlib.lib;$(SolutionDir)Contrib/DXSDK81/lib/d3d8.lib;$(SolutionDir)Contrib/DXSDK81/lib/d3dx8.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreSpecificDefaultLibraries>msvcrt.lib;libci.lib</IgnoreSpecificDefaultLibraries>
+      <ModuleDefinitionFile>SINRGE2.def</ModuleDefinitionFile>
+      <StackReserveSize>0</StackReserveSize>
+    </Link>
+    <Manifest>
+      <AdditionalManifestFiles>$(SolutionDir)XPManifest.xml %(AdditionalManifestFiles)</AdditionalManifestFiles>
+    </Manifest>
+    <PreBuildEvent>
+      <Command>ruby version_generator.rb</Command>
+    </PreBuildEvent>
+    <Lib>
+      <AdditionalDependencies>$(SolutionDir)Contrib/lib/zlib.lib;$(SolutionDir)Contrib/lib/libffi.lib;$(SolutionDir)Contrib/lib/seal/seal.lib;$(SolutionDir)Contrib/lib/msvcr100-ruby200-static_MT.lib;$(SolutionDir)Contrib/DXSDK81/lib/d3d8.lib;$(SolutionDir)Contrib/DXSDK81/lib/d3dx8.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Lib>
+    <Lib>
+      <IgnoreSpecificDefaultLibraries>msvcrt.lib;libci.lib</IgnoreSpecificDefaultLibraries>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="CRb7pkgWriter.cpp" />
@@ -122,6 +190,7 @@
     <ClCompile Include="hge\hgecolor.cpp" />
     <ClCompile Include="hge\hgedistort.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='TRUEDebug|Win32'">false</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="hge\hgerect.cpp" />
     <ClCompile Include="hge\hgesprite.cpp" />
@@ -131,6 +200,12 @@
     <ClCompile Include="MRbSinCore.cpp" />
     <ClCompile Include="MRbInput.cpp" />
     <ClCompile Include="MRbSeal.cpp" />
+    <ClCompile Include="RubyExt\fiddle\closure.c" />
+    <ClCompile Include="RubyExt\fiddle\conversions.c" />
+    <ClCompile Include="RubyExt\fiddle\fiddle.c" />
+    <ClCompile Include="RubyExt\fiddle\function.c" />
+    <ClCompile Include="RubyExt\fiddle\handle.c" />
+    <ClCompile Include="RubyExt\fiddle\pointer.c" />
     <ClCompile Include="RubyExt\nonblock.c" />
     <ClCompile Include="RubyExt\wait.c" />
     <ClCompile Include="RubyExt\zlib.c" />
@@ -141,6 +216,8 @@
     <ClCompile Include="sin_video.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\Contrib\include\ffi.h" />
+    <ClInclude Include="..\Contrib\include\ffitarget.h" />
     <ClInclude Include="..\Contrib\include\ruby.h" />
     <ClInclude Include="..\Contrib\include\ruby\backward\classext.h" />
     <ClInclude Include="..\Contrib\include\ruby\backward\rubyio.h" />
@@ -187,6 +264,10 @@
     <ClInclude Include="CRbTone.h" />
     <ClInclude Include="CRbViewport.h" />
     <ClInclude Include="CRbWin32API.h" />
+    <ClInclude Include="RubyExt\fiddle\closure.h" />
+    <ClInclude Include="RubyExt\fiddle\conversions.h" />
+    <ClInclude Include="RubyExt\fiddle\fiddle.h" />
+    <ClInclude Include="RubyExt\fiddle\function.h" />
     <ClInclude Include="sin_auto_buffer.h" />
     <ClInclude Include="sin_kconv.h" />
     <ClInclude Include="sin_revision.h" />

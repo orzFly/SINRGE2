@@ -37,11 +37,14 @@
     <Filter Include="源文件\RbInterface\base">
       <UniqueIdentifier>{1342fad3-7904-4fb5-8db3-5ad76675533a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="头文件\hge">
-      <UniqueIdentifier>{ece89693-0f0e-498f-af10-c35fc274eff1}</UniqueIdentifier>
-    </Filter>
     <Filter Include="源文件\SINRGE2\header">
       <UniqueIdentifier>{c5ca4ac0-e73e-4c7e-8924-0c7efb86552f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\RubyExt\fiddle">
+      <UniqueIdentifier>{a6ee2522-dcf9-46f9-a145-7fee36a01648}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\ruby\hge">
+      <UniqueIdentifier>{ece89693-0f0e-498f-af10-c35fc274eff1}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -159,6 +162,24 @@
     <ClCompile Include="CRbWin32API.cpp">
       <Filter>源文件\RbInterface\base</Filter>
     </ClCompile>
+    <ClCompile Include="RubyExt\fiddle\pointer.c">
+      <Filter>源文件\RubyExt\fiddle</Filter>
+    </ClCompile>
+    <ClCompile Include="RubyExt\fiddle\function.c">
+      <Filter>源文件\RubyExt\fiddle</Filter>
+    </ClCompile>
+    <ClCompile Include="RubyExt\fiddle\handle.c">
+      <Filter>源文件\RubyExt\fiddle</Filter>
+    </ClCompile>
+    <ClCompile Include="RubyExt\fiddle\fiddle.c">
+      <Filter>源文件\RubyExt\fiddle</Filter>
+    </ClCompile>
+    <ClCompile Include="RubyExt\fiddle\conversions.c">
+      <Filter>源文件\RubyExt\fiddle</Filter>
+    </ClCompile>
+    <ClCompile Include="RubyExt\fiddle\closure.c">
+      <Filter>源文件\RubyExt\fiddle</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h">
@@ -252,22 +273,22 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="hge\include\hgecolor.h">
-      <Filter>头文件\hge</Filter>
+      <Filter>头文件\ruby\hge</Filter>
     </ClInclude>
     <ClInclude Include="hge\include\hgedistort.h">
-      <Filter>头文件\hge</Filter>
+      <Filter>头文件\ruby\hge</Filter>
     </ClInclude>
     <ClInclude Include="hge\include\hgeparticle.h">
-      <Filter>头文件\hge</Filter>
+      <Filter>头文件\ruby\hge</Filter>
     </ClInclude>
     <ClInclude Include="hge\include\hgerect.h">
-      <Filter>头文件\hge</Filter>
+      <Filter>头文件\ruby\hge</Filter>
     </ClInclude>
     <ClInclude Include="hge\include\hgesprite.h">
-      <Filter>头文件\hge</Filter>
+      <Filter>头文件\ruby\hge</Filter>
     </ClInclude>
     <ClInclude Include="hge\include\hgevector.h">
-      <Filter>头文件\hge</Filter>
+      <Filter>头文件\ruby\hge</Filter>
     </ClInclude>
     <ClInclude Include="sin_video.h">
       <Filter>源文件\SINRGE2</Filter>
@@ -351,7 +372,7 @@
       <Filter>源文件\hge\core</Filter>
     </ClInclude>
     <ClInclude Include="hge\include\hge.h">
-      <Filter>头文件\hge</Filter>
+      <Filter>头文件\ruby\hge</Filter>
     </ClInclude>
     <ClInclude Include="CRbWin32API.h">
       <Filter>源文件\RbInterface\base</Filter>
@@ -379,6 +400,24 @@
     </ClInclude>
     <ClInclude Include="sin_types.h">
       <Filter>源文件\SINRGE2\header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Contrib\include\ffi.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Contrib\include\ffitarget.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="RubyExt\fiddle\fiddle.h">
+      <Filter>源文件\RubyExt\fiddle</Filter>
+    </ClInclude>
+    <ClInclude Include="RubyExt\fiddle\function.h">
+      <Filter>源文件\RubyExt\fiddle</Filter>
+    </ClInclude>
+    <ClInclude Include="RubyExt\fiddle\conversions.h">
+      <Filter>源文件\RubyExt\fiddle</Filter>
+    </ClInclude>
+    <ClInclude Include="RubyExt\fiddle\closure.h">
+      <Filter>源文件\RubyExt\fiddle</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
