@@ -40,6 +40,9 @@
     <Filter Include="源文件\SINRGE2\header">
       <UniqueIdentifier>{c5ca4ac0-e73e-4c7e-8924-0c7efb86552f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\RbInterface\module">
+      <UniqueIdentifier>{8749675c-19fd-47ac-8719-5529996cdd9a}</UniqueIdentifier>
+    </Filter>
     <Filter Include="源文件\RubyExt\fiddle">
       <UniqueIdentifier>{a6ee2522-dcf9-46f9-a145-7fee36a01648}</UniqueIdentifier>
     </Filter>
@@ -81,20 +84,8 @@
     <ClCompile Include="sin_sprite.cpp">
       <Filter>源文件\SINRGE2</Filter>
     </ClCompile>
-    <ClCompile Include="MRbInput.cpp">
-      <Filter>源文件\RbInterface</Filter>
-    </ClCompile>
-    <ClCompile Include="MRbSinCore.cpp">
-      <Filter>源文件\RbInterface</Filter>
-    </ClCompile>
-    <ClCompile Include="MRbSeal.cpp">
-      <Filter>源文件\RbInterface</Filter>
-    </ClCompile>
     <ClCompile Include="Entry.cpp">
       <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="MRbAudio.cpp">
-      <Filter>源文件\RbInterface</Filter>
     </ClCompile>
     <ClCompile Include="sin_timer.cpp">
       <Filter>源文件\SINRGE2</Filter>
@@ -106,9 +97,6 @@
       <Filter>源文件\RbInterface</Filter>
     </ClCompile>
     <ClCompile Include="CRbBitmap.cpp">
-      <Filter>源文件\RbInterface</Filter>
-    </ClCompile>
-    <ClCompile Include="CRbDisplayObject.cpp">
       <Filter>源文件\RbInterface</Filter>
     </ClCompile>
     <ClCompile Include="CRbLFont.cpp">
@@ -124,9 +112,6 @@
       <Filter>源文件\RbInterface</Filter>
     </ClCompile>
     <ClCompile Include="CRbSprite.cpp">
-      <Filter>源文件\RbInterface</Filter>
-    </ClCompile>
-    <ClCompile Include="CRbTable.cpp">
       <Filter>源文件\RbInterface</Filter>
     </ClCompile>
     <ClCompile Include="CRbViewport.cpp">
@@ -161,6 +146,24 @@
     </ClCompile>
     <ClCompile Include="CRbWin32API.cpp">
       <Filter>源文件\RbInterface\base</Filter>
+    </ClCompile>
+    <ClCompile Include="CRbDisplayObject.cpp">
+      <Filter>源文件\RbInterface\base</Filter>
+    </ClCompile>
+    <ClCompile Include="CRbTable.cpp">
+      <Filter>源文件\RbInterface\base</Filter>
+    </ClCompile>
+    <ClCompile Include="MRbAudio.cpp">
+      <Filter>源文件\RbInterface\module</Filter>
+    </ClCompile>
+    <ClCompile Include="MRbInput.cpp">
+      <Filter>源文件\RbInterface\module</Filter>
+    </ClCompile>
+    <ClCompile Include="MRbSeal.cpp">
+      <Filter>源文件\RbInterface\module</Filter>
+    </ClCompile>
+    <ClCompile Include="MRbSinCore.cpp">
+      <Filter>源文件\RbInterface\module</Filter>
     </ClCompile>
     <ClCompile Include="RubyExt\fiddle\pointer.c">
       <Filter>源文件\RubyExt\fiddle</Filter>
@@ -299,18 +302,6 @@
     <ClInclude Include="sin_sprite.h">
       <Filter>源文件\SINRGE2</Filter>
     </ClInclude>
-    <ClInclude Include="MRbInput.h">
-      <Filter>源文件\RbInterface</Filter>
-    </ClInclude>
-    <ClInclude Include="MRbSinCore.h">
-      <Filter>源文件\RbInterface</Filter>
-    </ClInclude>
-    <ClInclude Include="MRbSeal.h">
-      <Filter>源文件\RbInterface</Filter>
-    </ClInclude>
-    <ClInclude Include="MRbAudio.h">
-      <Filter>源文件\RbInterface</Filter>
-    </ClInclude>
     <ClInclude Include="sin_timer.h">
       <Filter>源文件\SINRGE2</Filter>
     </ClInclude>
@@ -321,9 +312,6 @@
       <Filter>源文件\RbInterface</Filter>
     </ClInclude>
     <ClInclude Include="CRbBitmap.h">
-      <Filter>源文件\RbInterface</Filter>
-    </ClInclude>
-    <ClInclude Include="CRbDisplayObject.h">
       <Filter>源文件\RbInterface</Filter>
     </ClInclude>
     <ClInclude Include="CRbLFont.h">
@@ -341,9 +329,6 @@
     <ClInclude Include="CRbSprite.h">
       <Filter>源文件\RbInterface</Filter>
     </ClInclude>
-    <ClInclude Include="CRbTable.h">
-      <Filter>源文件\RbInterface</Filter>
-    </ClInclude>
     <ClInclude Include="CRbViewport.h">
       <Filter>源文件\RbInterface</Filter>
     </ClInclude>
@@ -358,12 +343,6 @@
     </ClInclude>
     <ClInclude Include="CRbTone.h">
       <Filter>源文件\RbInterface\base</Filter>
-    </ClInclude>
-    <ClInclude Include="CRbClassBase.h">
-      <Filter>源文件\RbInterface</Filter>
-    </ClInclude>
-    <ClInclude Include="CRbTilemap.h">
-      <Filter>源文件\RbInterface</Filter>
     </ClInclude>
     <ClInclude Include="CRbCharmap.h">
       <Filter>源文件\RbInterface</Filter>
@@ -401,6 +380,27 @@
     <ClInclude Include="sin_types.h">
       <Filter>源文件\SINRGE2\header</Filter>
     </ClInclude>
+    <ClInclude Include="CRbDisplayObject.h">
+      <Filter>源文件\RbInterface\base</Filter>
+    </ClInclude>
+    <ClInclude Include="CRbClassBase.h">
+      <Filter>源文件\RbInterface\base</Filter>
+    </ClInclude>
+    <ClInclude Include="CRbTable.h">
+      <Filter>源文件\RbInterface\base</Filter>
+    </ClInclude>
+    <ClInclude Include="MRbSinCore.h">
+      <Filter>源文件\RbInterface\module</Filter>
+    </ClInclude>
+    <ClInclude Include="MRbAudio.h">
+      <Filter>源文件\RbInterface\module</Filter>
+    </ClInclude>
+    <ClInclude Include="MRbInput.h">
+      <Filter>源文件\RbInterface\module</Filter>
+    </ClInclude>
+    <ClInclude Include="MRbSeal.h">
+      <Filter>源文件\RbInterface\module</Filter>
+    </ClInclude>
     <ClInclude Include="..\Contrib\include\ffi.h">
       <Filter>头文件</Filter>
     </ClInclude>
@@ -419,6 +419,7 @@
     <ClInclude Include="RubyExt\fiddle\closure.h">
       <Filter>源文件\RubyExt\fiddle</Filter>
     </ClInclude>
+
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="SINRGE2 Core.rc">
