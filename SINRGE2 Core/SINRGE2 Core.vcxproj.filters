@@ -99,9 +99,6 @@
     <ClCompile Include="CRbBitmap.cpp">
       <Filter>源文件\RbInterface</Filter>
     </ClCompile>
-    <ClCompile Include="CRbLFont.cpp">
-      <Filter>源文件\RbInterface</Filter>
-    </ClCompile>
     <ClCompile Include="CRbParticleSystem.cpp">
       <Filter>源文件\RbInterface</Filter>
     </ClCompile>
@@ -317,9 +314,6 @@
     <ClInclude Include="CRbBitmap.h">
       <Filter>源文件\RbInterface</Filter>
     </ClInclude>
-    <ClInclude Include="CRbLFont.h">
-      <Filter>源文件\RbInterface</Filter>
-    </ClInclude>
     <ClInclude Include="CRbParticleSystem.h">
       <Filter>源文件\RbInterface</Filter>
     </ClInclude>
@@ -365,9 +359,6 @@
     <ClInclude Include="sin_color.h">
       <Filter>源文件\SINRGE2\header</Filter>
     </ClInclude>
-    <ClInclude Include="sin_bitmap.h">
-      <Filter>源文件\SINRGE2\header</Filter>
-    </ClInclude>
     <ClInclude Include="sin_common.h">
       <Filter>源文件\SINRGE2\header</Filter>
     </ClInclude>
@@ -404,6 +395,9 @@
     <ClInclude Include="MRbSeal.h">
       <Filter>源文件\RbInterface\module</Filter>
     </ClInclude>
+    <ClInclude Include="sin_image.h">
+      <Filter>源文件\SINRGE2\header</Filter>
+    </ClInclude>
     <ClInclude Include="..\Contrib\include\ffi.h">
       <Filter>头文件</Filter>
     </ClInclude>
@@ -421,8 +415,7 @@
     </ClInclude>
     <ClInclude Include="RubyExt\fiddle\closure.h">
       <Filter>源文件\RubyExt\fiddle</Filter>
-    </ClInclude>
-  </ItemGroup>
+    </ClInclude>  </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="SINRGE2 Core.rc">
       <Filter>资源文件</Filter>
