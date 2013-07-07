@@ -203,6 +203,7 @@
     <ClCompile Include="RubyExt\fiddle\closure.c" />
     <ClCompile Include="RubyExt\fiddle\conversions.c" />
     <ClCompile Include="RubyExt\fiddle\fiddle.c" />
+    <ClCompile Include="RubyExt\fiddle\fiddle_rb.c" />
     <ClCompile Include="RubyExt\fiddle\function.c" />
     <ClCompile Include="RubyExt\fiddle\handle.c" />
     <ClCompile Include="RubyExt\fiddle\pointer.c" />

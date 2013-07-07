@@ -493,7 +493,7 @@ int CApplication::Eval(const char * script)
 	rb_eval_string_protect(script, &status);
 
 	if ( status )
-	{
+	{//TODO: 
 		rb_eval_string_protect("print $!", &status);
 		return 1;
 	}
@@ -533,6 +533,7 @@ void CApplication::InitRubyInnerClassExt()
 	Init_nonblock();
 	Init_wait();
 	Init_fiddle();
+	Init_fiddle_rb();
 }
 
 void CApplication::InitExportSinInterface()

@@ -183,6 +183,9 @@
     <ClCompile Include="RubyExt\fiddle\closure.c">
       <Filter>源文件\RubyExt\fiddle</Filter>
     </ClCompile>
+    <ClCompile Include="RubyExt\fiddle\fiddle_rb.c">
+      <Filter>源文件\RubyExt\fiddle</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h">
@@ -419,7 +422,6 @@
     <ClInclude Include="RubyExt\fiddle\closure.h">
       <Filter>源文件\RubyExt\fiddle</Filter>
     </ClInclude>
-
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="SINRGE2 Core.rc">
